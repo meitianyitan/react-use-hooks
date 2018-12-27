@@ -9,12 +9,12 @@
   "types": "lib/index.d.ts",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "start": "yarn docz:dev",
+    "start": "tsc -w",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
     "docz:clean": "rimraf .docz/dist",
-    "build": "tsc",
     "build:site": "yarn docz:clean && yarn docz:build && gh-pages -d .docz/dist",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "husky": {
@@ -48,11 +48,16 @@
     "docz-theme-default": "^0.13.7",
     "gh-pages": "^2.0.1",
     "husky": "^1.2.1",
+    "react": "16.7.0-alpha.2",
+    "react-dom": "16.7.0-alpha.2",
     "rimraf": "^2.6.2"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "@types/react": "^16.7.18"
   }
 }
